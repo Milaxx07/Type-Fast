@@ -17,17 +17,6 @@ body {
     position: relative;
 }
 
-/* Pílula superior com texto cursivo */
-.top-banner {
-    position: absolute;
-    top: 15px;
-    background-color: #0d2853;
-    color: #ffffff;
-    padding: 8px 45px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    border: 1px solid #234f8a;
-}
 
 /* 1. Faixa azul clara que cola no topo da tela */
 .top-bar {
@@ -36,7 +25,7 @@ body {
     left: 0;
     width: 100%;
     background-color: #a0c2e8; 
-    padding: 12px 0;
+    padding: 30px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +36,7 @@ body {
 .top-pill {
     background-color: #0d2853;
     color: #ffffff;
-    padding: 6px 40px;
+    padding: 8px 45px;
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     border: 1px solid #234f8a;
