@@ -9,7 +9,7 @@
 body {
     min-height: 100vh;
     /* Imagem de fundo PNG atualizada */
-    background: url('assets/fundo.png') no-repeat center center/cover;
+    background: url('imagens/fundo.png') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +29,31 @@ body {
     border: 1px solid #234f8a;
 }
 
-.top-banner span {
+/* 1. Faixa azul clara que cola no topo da tela */
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #a0c2e8; 
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 2. Pílula escura centralizada dentro da faixa */
+.top-pill {
+    background-color: #0d2853;
+    color: #ffffff;
+    padding: 6px 40px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #234f8a;
+}
+
+.top-pill span {
     font-family: 'Caveat', cursive;
     font-size: 26px;
     font-weight: 600;
