@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYPEfast - Login</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <header class="top-banner">
+        <span>Teste seu tempo de digitação</span>
+    </header>
+
+    <main class="login-container">
+        <div class="login-card">
+            <div class="logo-box">
+                <img src="imagens/logo.png" alt="Logo TYPEfast" class="logo-img">
+            </div>
+
+            <form id="login-form">
+                <div class="input-container">
+                    <input type="email" id="email" placeholder="e-mail" required autocomplete="off">
+                    <i class="bx bxs-user input-icon"></i>
+                </div>
+
+                <div class="input-container">
+                    <input type="password" id="senha" placeholder="senha" required>
+                    <i class="bx bxs-lock-alt input-icon" id="bntSenha"></i>
+                </div>
+
+                <!--quando terminar de criar outras páginas não esquecer de linkar-->
+                <div class="form-links">
+                    <a href="#">esqueci a senha</a>
+                     <a href="#">cadastre-se aqui</a>
+                </div>
+
+                <div class="button-box">
+                    <button type="submit" class="bnt-login">
+                        Login
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
