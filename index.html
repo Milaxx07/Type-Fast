@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TYPEfast - Login</title>
-
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>TYPEFast - Login</title>
+    
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
-
+    
+    <!-- NOVO: Importação da fonte Poppins com variações de peso (400, 500, 600) -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
-    <!-- Barra superior completa -->
     <header class="top-bar">
-    <!-- Pílula escura centralizada -->
         <div class="top-pill">
             <span>Teste seu tempo de digitação</span>
         </div>
@@ -25,11 +24,13 @@
 
     <main class="login-container">
         <div class="login-card">
+            
             <div class="logo-box">
-                <img src="imagens/logo.png" alt="Logo TYPEfast" class="logo-img">
+                <img src="imagens/logo.png" alt="Logo TYPEFast" class="logo-img">
             </div>
 
             <form id="login-form">
+                
                 <div class="input-container">
                     <input type="email" id="email" placeholder="e-mail" required autocomplete="off">
                     <i class="bx bxs-user input-icon"></i>
@@ -37,13 +38,13 @@
 
                 <div class="input-container">
                     <input type="password" id="senha" placeholder="senha" required>
-                    <i class="bx bxs-lock-alt input-icon" id="bntSenha"></i>
+                    <i class="bx bxs-lock-alt input-icon" id="btnSenha"></i>
                 </div>
 
-                <!--quando terminar de criar outras páginas não esquecer de linkar-->
                 <div class="form-links">
-                    <a href="#">esqueci a senha</a>
-                     <a href="#">cadastre-se aqui</a>
+                    <!-- NOVO: Adicionada a classe 'link-item' para aplicar hover e estilo moderno no CSS -->
+                    <a href="#" class="link-item">esqueci a senha</a>
+                    <a href="#" class="link-item">cadastre-se aqui</a>
                 </div>
 
                 <div class="button-box">
@@ -55,6 +56,5 @@
     </main>
 
     <script src="script.js"></script>
-    
 </body>
 </html>
