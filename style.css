@@ -1,86 +1,90 @@
-/* Zerando margens e padronizando o modelo de caixa */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    /* NOVO: Alterada a fonte padrão do projeto para Poppins */
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     min-height: 100vh;
-    /* Imagem de fundo PNG atualizada */
     background: url('imagens/fundo.png') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
+    /* NOVO: Bloqueia rolagens horizontais acidentais */
+    overflow-x: hidden;
 }
 
-
-/* 1. Faixa azul clara que cola no topo da tela */
+/* NOVO: Efeito Glassmorphism (vidro fumê/translúcido) na barra do topo */
 .top-bar {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #a0c2e8; 
-    padding: 30px 0;
+    background: rgba(160, 194, 232, 0.35); /* Cor azul clara com canal alfa de transparência */
+    backdrop-filter: blur(8px); /* Aplica desfoque na imagem que passa por trás */
+    padding: 16px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória translúcida */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* 2. Pílula escura centralizada dentro da faixa */
 .top-pill {
-    background-color: #0d2853;
+    background: #0d2853;
     color: #ffffff;
     padding: 8px 45px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    border: 1px solid #234f8a;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* NOVO: Borda sutil na pílula */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .top-pill span {
     font-family: 'Caveat', cursive;
     font-size: 26px;
     font-weight: 600;
+    letter-spacing: 0.5px; /* NOVO: Leve espaçamento entre os caracteres */
 }
 
-/* Container e Card Principal */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 20px;
+    margin-top: 50px; /* NOVO: Margem para evitar que o card colida com a barra superior */
 }
 
 .login-card {
-    background-color: #003b8e;
+    /* NOVO: Gradiente em ângulo (145deg) substituindo a cor sólida para dar profundidade */
+    background: linear-gradient(145deg, #003680, #00255c);
     width: 100%;
-    max-width: 420px;
-    padding: 40px 35px;
-    border-radius: 30px;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+    max-width: 400px;
+    padding: 45px 35px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.12); /* NOVO: Borda fina brilhante em volta do card */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45); /* Sombra mais profunda */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Logo */
 .logo-box {
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     text-align: center;
 }
 
 .logo-img {
-    max-width: 160px;
+    max-width: 170px;
     height: auto;
+    /* NOVO: Sombra diretamente recortada no formato PNG da logo */
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
 }
 
-/* Formulário e Inputs */
 #login-form {
     width: 100%;
     display: flex;
@@ -97,26 +101,39 @@ body {
     width: 100%;
     padding: 14px 45px 14px 20px;
     background-color: #dbe4ee;
-    border: 2px solid #008CFF;
-    border-radius: 12px;
-    font-size: 18px;
-    color: #4b627e;
+    border: 2px solid transparent; /* NOVO: Reserva o espaço da borda sem alterar o tamanho do elemento ao focar */
+    border-radius: 14px;
+    font-size: 15px;
+    color: #1a3356;
     outline: none;
+    transition: all 0.3s ease; /* NOVO: Animação suave em todas as mudanças do input */
 }
 
 .input-container input::placeholder {
-    color: #8c9eb2;
+    color: #7b8eaf;
 }
 
-/* Ícones do Boxicons */
+/* NOVO: Estado acionado quando o usuário clica dentro do campo de texto */
+.input-container input:focus {
+    background-color: #ffffff; /* Fundo fica totalmente branco */
+    border-color: #008cff; /* Desenha contorno azul vibrante */
+    box-shadow: 0 0 12px rgba(0, 140, 255, 0.35); /* Cria auréola/brilho azul em volta */
+}
+
 .input-icon {
     position: absolute;
-    right: 18px;
+    right: 16px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
-    color: #8c9eb2;
+    font-size: 22px;
+    color: #657b9d;
     pointer-events: none;
+    transition: color 0.3s ease; /* NOVO: Transição de cor suave para o ícone */
+}
+
+/* NOVO: Muda a cor do ícone do Boxicons quando o input do mesmo container recebe clique */
+.input-container:focus-within .input-icon {
+    color: #008cff;
 }
 
 #btnSenha {
@@ -124,23 +141,31 @@ body {
     cursor: pointer;
 }
 
-/* Links (Esqueci a senha e Cadastre-se) */
 .form-links {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-top: 2px;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     padding: 0 4px;
 }
 
-.form-links a {
-    color: #ffffff;
+/* NOVO: Estilização dedicada para os links "esqueci a senha" e "cadastre-se" */
+.link-item {
+    color: #e0e9f5;
     font-size: 12px;
-    text-decoration: underline;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: all 0.2s ease;
 }
 
-/* Botão de Login */
+/* NOVO: Efeito de iluminação e sublinhado ao passar o mouse sobre os links */
+.link-item:hover {
+    opacity: 1;
+    text-decoration: underline;
+    color: #ffffff;
+}
+
 .button-box {
     display: flex;
     justify-content: center;
@@ -148,21 +173,27 @@ body {
 }
 
 .btn-login {
-    background-color: #A2C2E8;
-    color: #1a3356;
+    background-color: #dbe4ee;
+    color: #0d2853;
     border: none;
-    padding: 10px 45px;
-    border-radius: 20px;
-    font-size: 20px;
-    font-weight: bold;
+    padding: 12px 50px;
+    border-radius: 22px;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.5s, transform 0.1s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; /* NOVO: Animação para a transição de elevação */
 }
 
+/* NOVO: Efeito de elevação 3D ao passar o mouse no botão */
 .btn-login:hover {
     background-color: #ffffff;
+    transform: translateY(-2px); /* Eleva o botão 2px para cima */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Aumenta a projeção da sombra */
 }
 
+/* NOVO: Efeito de afundamento ao pressionar o clique do mouse */
 .btn-login:active {
-    transform: scale(0.98);
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
