@@ -3,34 +3,29 @@ const emailInput = document.getElementById('email');
 const senhaInput = document.getElementById('senha');
 
 loginForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault(); // Impede a página de recarregar
 
     const emailValor = emailInput.value.trim();
     const senhaValor = senhaInput.value;
 
-    console.log('Tentativa de Login iniciada: ');
-    console.log('E-mail digitado: ', emailValor);
-    console.log('Senha digitada: ', senhaValor);
-
+    // Chama a função de validação
     autenticarUsuario(emailValor, senhaValor);
 });
 
-// Função que valida os dados e muda de página
 function autenticarUsuario(email, senha) {
-    // Definindo credenciais "corretas" para teste
-    const emailCorreto = "teste@email.com";
-    const senhaCorreta = "123456";
+    // Credenciais válidas para teste
+    const emailValido = "teste@email.com";
+    const senhaValida = "123456";
 
-    // Verifica se o que o usuário digitou é igual aos dados corretos
-    if (email === emailCorreto && senha === senhaCorreta) {
-        // Redireciona para a nova tela do dashboard
+    // 1. Se os dados estiverem corretos:
+    if (email === emailValido && senha === senhaValida) {
+        // Redireciona para o novo arquivo dashboard.html
         window.location.href = "dashboard.html";
-    } else {
-        // Mostra um erro se a senha ou e-mail estiverem errados
-        alert("E-mail ou senha incorretos!\nPara testar, use:\nE-mail: teste@email.com\nSenha: 123456");
-        
-        // Limpa o campo de senha para o usuário tentar de novo
-        senhaInput.value = "";
-        senhaInput.focus();
+    } 
+    // 2. Se os dados estiverem incorretos:
+    else {
+        alert("E-mail ou senha incorretos!\n\nDados para teste:\nE-mail: teste@email.com\nSenha: 123456");
+        senhaInput.value = ""; // Limpa o campo de senha
+        senhaInput.focus();   // Coloca o cursor na senha novamente
     }
 }
