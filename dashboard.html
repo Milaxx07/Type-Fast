@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYPEFast - Teste de Digitação</title>
+    
+    <!-- Ícones do Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <main class="dashboard-container">
+        <div class="main-card">
+            
+            <!-- Cabeçalho do Cartão -->
+            <header class="card-header">
+                <!-- Cronómetro -->
+                <div class="timer-pill" id="cronometro">00:00</div>
+                
+                <!-- Logo -->
+                <div class="logo-box">
+                    <img src="imagens/logo.png" alt="Logo TYPEFast" class="logo-img">
+                </div>
+                
+                <!-- Perfil e Log Out -->
+                <div class="user-menu-container">
+                    <i class='bx bxs-user-circle user-icon' id="btn-perfil"></i>
+                    <div class="user-dropdown oculta" id="menu-dropdown">
+                        <button id="btn-logout"><i class='bx bx-log-out'></i> Log Out</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Caixa de Texto Aleatório -->
+            <div class="text-display">
+                <p id="texto-gerado">A carregar texto...</p>
+            </div>
+
+            <!-- Caixa de Entrada (Input) -->
+            <div class="input-wrapper">
+                <input type="text" id="input-digitacao" placeholder="digite aqui" autocomplete="off">
+            </div>
+
+            <!-- Botão Mandar -->
+            <button class="btn-mandar" id="btn-mandar">
+                mandar <i class='bx bx-subdirectory-left'></i>
+            </button>
+
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
